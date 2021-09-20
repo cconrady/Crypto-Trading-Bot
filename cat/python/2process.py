@@ -16,7 +16,7 @@ def main():
 	# ------------------------------------------------------------------------ #
 
 	# ----------------------------------------------------------------------------------------
-	# [1.] Fetch data from table "xxx_catdb.requests & xxx_catdb.apis"
+	# [1.] Fetch data from table "catdb.requests & catdb.apis"
 
 	pg = PostgreSQL("catdb") # <---------- INSERT YOUR database NAME HERE (if different from 'init.sql') ----- !!!
 	tools = Tools()

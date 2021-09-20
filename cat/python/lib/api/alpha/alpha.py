@@ -13,7 +13,7 @@ class Alpha(General):
 			"function": "CURRENCY_EXCHANGE_RATE",
 			"from_currency": "EUR",
 			"to_currency": "ZAR",
-			"apikey": "XAWN1OVRSV1288BS" # <---- INSERT YOUR API KEY HERE <---------------------------------------------------
+			"apikey": "#" # <---- INSERT YOUR API KEY HERE <---------------------------------------------------
 		}
 		self._PAIR_TERM = None
 

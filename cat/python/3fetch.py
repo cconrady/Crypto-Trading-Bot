@@ -9,7 +9,7 @@ def main():
 	# ----------------------------------------------------------------------------------------
 
 	# ----------------------------------------------------------------------------------------
-	# [1.] Fetch data from table "xxx_catdb.arb"
+	# [1.] Fetch data from table "catdb.arb"
 
 	pg = PostgreSQL("catdb") # <---------- INSERT YOUR database NAME HERE (if different from 'init.sql') ----- !!!
 	tools = Tools()

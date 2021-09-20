@@ -19,7 +19,7 @@ from multiprocessing import Pool
 from os import getpid
 
 # ----------------------------------------------------------------------------------------
-# [1.] Fetch data from table "xxx_catdb.apis"
+# [1.] Fetch data from table "catdb.apis"
 
 pg = PostgreSQL("catdb") # <---------- INSERT YOUR database NAME HERE (if different from 'init.sql') ----- !!!
 
