@@ -39,7 +39,8 @@ if(!require(formattable)) {install.packages("formattable"); library(formattable)
 #if(!require(DT)) {install.packages("DT"); library(DT)}
 
 # SQL - PostgreSQL
-if(!require(DBI)) {install.packages("RPostgres"); library(DBI)}
+if(!require(DBI)) {install.packages("DBI"); library(DBI)}
+if(!require(RPostgres)) {install.packages("RPostgres"); library(RPostgres)}
 
 # Other
 if(!require(base64enc)) {install.packages("base64enc"); library(base64enc)}

@@ -1,12 +1,14 @@
 # SQL - PostgreSQL
-if(!require(DBI)) {install.packages("RPostgres"); library(DBI)}
+if(!require(DBI)) {install.packages("DBI"); library(DBI)}
+if(!require(RPostgres)) {install.packages("RPostgres"); library(RPostgres)}
 
 # [i] PostgreSQL
 get_slq_data <- function(query) {
   
   # connect to postgres database
   
-  con <- dbConnect(RPostgres::Postgres(), # <------ ENTER YOUR OWN SECURE DETAILS HERE
+  con <- dbConnect(RPostgres::Postgres(),
+                   # <------ ENTER YOUR OWN SECURE DETAILS HERE
                    dbname = 'catdb', 
                    host = 'localhost',
                    port = 5432,
