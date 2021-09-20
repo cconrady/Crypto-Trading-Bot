@@ -35,6 +35,8 @@ requests==2.26.0
 psycopg2==2.9.1
 ```
 
+The easiest method is to use a package manager, create a virtual environment, and use `..\cat\requirements.txt` to create a replica of the environment.
+
 You will also need to update `..\cat\python\lib\api\alpha\alpha.py` with your [Alpha](https://www.alphavantage.co/) api tocken(s). If you don't have one yet, you can create one [here](https://www.alphavantage.co/support/#api-key). This is a free api service to get realtime ticker data on the EUR/ZAR pair, please use it responsibly.
 
 # R (and RStudio) - frontend
