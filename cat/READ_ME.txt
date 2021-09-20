@@ -9,6 +9,7 @@
 '..\cat\python\lib\sql\postgresql\postgresql.py'
 '..\cat\python\lib\api\alpha\alpha.py'
 '..\cat\python\lib\api\valr\valr.py'
+'..\cat\cat.bat'
 
 4. Run sql.init (..\cat\sql\database\init.sql), to setup the db and tables.
 5. Install R & RStudio (IDE).
