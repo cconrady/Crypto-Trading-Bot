@@ -8,23 +8,23 @@ The cryptocurrency abitrage tracker and trading bot is built using [Python](http
 
 ## Installation
 
-*1.* You'll need to setup a working version of [PostgreSQL](https://www.postgresql.org/). You can find the installation instructions [here](https://www.postgresql.org/). 
+# SQL - relational database
 
-*2.* Create a db 
+*1.* You'll need to setup a working version of [PostgreSQL](https://www.postgresql.org/). You can find the installation instructions [here](https://www.postgresql.org/).
 
-```python
+*2.* Once installed, create a database named `catdb`.
 
-class PostgreSQL():
-
-  def __init__(self, db_name):
-    self.db_name = db_name
-    self._db_user = "postgres"
-    self._db_password = "password"
-    self._db_host = "localhost"
-    self._db_port = "5432"
-    self._connection = None
-    
 ```
+'..\cat\sql\database\init.sql'
+'..\cat\R\lib\postgresql.R'
+'..\cat\python\lib\sql\postgresql\postgresql.py'
+```
+
+*3.* Update the following files with the login details you created in `2.`.
+
+*4.* Open a new query, and run the `../cat/sql/databse/init.sql`. This will set up the necessary relational tables for storing the data for the crypto bot.
+
+# Python - backend
 
 You can use any package manager you like (conda, pip, etc.) - you may even choose not to use any! Whichever path you take, make sure to have the following python packages installed, and the correct python version.
 
@@ -35,10 +35,24 @@ requests==2.26.0
 psycopg2==2.9.1
 ```
 
-You'll nedd to create 
+You will also need to update `..\cat\python\lib\api\alpha\alpha.py` with your [Alpha](https://www.alphavantage.co/) api tockens. If you don't have you can create one [here](https://www.alphavantage.co/support/#api-key). This is a free api service to get realtime ticker data on the EUR/ZAR pair.
 
-```python
+# R (and RStudio) - frontend
 
-pg = PostgreSQL("catdb")
-    
+*1.* You'll need to setup a working version of [RStudio](https://www.rstudio.com/products/rstudio/#rstudio-desktop). You can find the installation instructions [here](https://www.rstudio.com/products/rstudio/#rstudio-desktop). You will also need to install [R](https://www.r-project.org/) from [here](https://www.r-project.org/).
+
+## Run
+
+*1.* Update the file `..\cat\cat.bat`. This will execute in batch the following python files, in sequence. If you'd prefer, you can simply run manually each of these scripts in turn.
+
 ```
+1ping.py # fetch order books, save to sql database
+2process.py # calculate arbitrage, and save to sql database
+3fetch.py # retrieve arbitrage data, save for shiny dashboard access
+```
+
+*2.* Open and execute the R script, `..\cat\R\app.R`. This will open an offline web-app and display the arbitrage pairs across Kraken and Luno, as well as the premiums available across the order book(s).
+
+## P.S.
+
+At the time of writing, the crypto bot is only able to show the arbitrage premiums across exchanges, but is not setup to automatically execute trades. Please check back later for this feature in a future update :)
